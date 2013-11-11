@@ -1,4 +1,4 @@
-package spengergasse.Bootsverleih1;
+package spengergasse.Bootsverleih2;
 
 import java.io.Serializable;
 
