@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Mietet")
-public class Mietet {
+public class Mietet extends BasePersistable{
 
 	/**
 	 * @param args

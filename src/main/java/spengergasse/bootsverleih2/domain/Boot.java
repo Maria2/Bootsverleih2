@@ -16,8 +16,6 @@ import javax.validation.constraints.NotNull;
 
 public class Boot extends BasePersistable{
 	
-	private static final long serialVersionUID = 6812918095609408451L;
-	
 	@NotNull
 	@ManyToOne (targetEntity = BootTyp.class)
 	public static String bootId;

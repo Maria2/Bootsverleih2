@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Boot_Typ")
-public class BootTyp {
+public class BootTyp extends BasePersistable {
 
 	@NotNull
 	@OneToMany (targetEntity = Boot.class)
