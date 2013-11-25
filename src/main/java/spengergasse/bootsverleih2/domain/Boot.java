@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Boot")
-
 public class Boot extends BasePersistable{
 	
 	@NotNull

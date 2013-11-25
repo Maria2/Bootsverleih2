@@ -22,9 +22,9 @@ public class Kunde extends BasePersistable{
 	private String nachname;
 	
 	private String wohnort;
-	private int plz;
+	private String plz;
 	
-	public Kunde(String kId, String vorname, String nachname, String wohnort, int plz) {
+	public Kunde(String kId, String vorname, String nachname, String wohnort, String plz) {
 		// TODO Auto-generated method stub
 		
 		this.kId=kId;

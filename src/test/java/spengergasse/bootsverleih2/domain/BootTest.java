@@ -34,7 +34,7 @@ public class BootTest{
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{ //
                 {null, null, null, null}, //
-                {null, "DreamCruiser", "Cruiser", null}, //
+                {null, "DreamCruiser", "", null}, //
                 {null, "DreamCruiser", "Barque", null}, //
                 {null, null, "Barque", 30},
                 {null, null, "Battleship", 100}};

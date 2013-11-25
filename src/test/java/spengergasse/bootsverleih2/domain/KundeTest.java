@@ -1,9 +1,13 @@
 package spengergasse.bootsverleih2.domain;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+@RunWith(value = Parameterized.class)
 public class KundeTest {
 
 	private String kId;
@@ -13,9 +17,9 @@ public class KundeTest {
 	private String nachname;
 	
 	private String wohnort;
-	private int plz;
+	private String plz;
 	
-	public KundeTest(String kId, String vorname, String nachname, String wohnort, int plz) {
+	public KundeTest(String kId, String vorname, String nachname, String wohnort, String plz) {
 		// TODO Auto-generated method stub
 		
 		this.kId=kId;
@@ -25,10 +29,21 @@ public class KundeTest {
 		this.plz=plz;
 	}
 	
-	@Test
-	public void Test()
-	{
-		
-	}
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        Object[][] data = new Object[][]{ //
+                {null, null, null, null, null}, //
+                {"456789", "Maria", "Hasler", "Wien", "1060"}, //
+                {"456789", "Maria", "Hasler", "Wien", "1060"}, //
+                {"456789", "Maria", "Hasler", "Wien", "1060"},
+                {"456789", "Maria", "Hasler", "Wien", "1060"},
+                {"456789", "Maria", "Hasler", "Wien", "1060"}};
+        return Arrays.asList(data);
+    }
+	
+    @Test(expected = IllegalArgumentException.class)
+    public void whenCreatingWithNullArguments() {
+        new KundeTest(kId, vorname, nachname, wohnort, plz);
+    }
 
 }
