@@ -1,4 +1,4 @@
-package spengergasse.bootsverleih2.repository;
+package spengergasse.bootsverleih2.repositoryjpa;
 
 import java.util.List;
 
