@@ -10,7 +10,7 @@ import org.junit.runners.Parameterized;
 @RunWith(value = Parameterized.class)
 public class KundeTest {
 
-	private String kId;
+	private float kId;
 	
 	private String vorname;
 	
@@ -19,7 +19,7 @@ public class KundeTest {
 	private String wohnort;
 	private String plz;
 	
-	public KundeTest(String kId, String vorname, String nachname, String wohnort, String plz) {
+	public KundeTest(float kId, String vorname, String nachname, String wohnort, String plz) {
 		// TODO Auto-generated method stub
 		
 		this.kId=kId;

@@ -11,7 +11,7 @@ import org.junit.runners.Parameterized;
 public class MietetTest {
 
 
-	private String mId;
+	private float mId;
 	
 	private String verleihStart;
 	
@@ -19,7 +19,7 @@ public class MietetTest {
 	
 	private int discount;
 	
-	public MietetTest(String mId, String verleihStart, int dauer, int discount) {
+	public MietetTest(float mId, String verleihStart, int dauer, int discount) {
 		// TODO Auto-generated method stub
 		this.mId=mId;
 		this.verleihStart=verleihStart;

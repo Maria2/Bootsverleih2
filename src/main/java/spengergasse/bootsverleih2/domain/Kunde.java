@@ -13,7 +13,7 @@ public class Kunde extends BasePersistable{
 	 * @param args
 	 */
 	@NotNull
-	private String kId;
+	private float kId;
 	
 	@Column(name = "vorname", nullable = false, length = 255)
 	private String vorname;
@@ -24,7 +24,7 @@ public class Kunde extends BasePersistable{
 	private String wohnort;
 	private String plz;
 	
-	public Kunde(String kId, String vorname, String nachname, String wohnort, String plz) {
+	public Kunde(float kId, String vorname, String nachname, String wohnort, String plz) {
 		// TODO Auto-generated method stub
 		
 		this.kId=kId;

@@ -13,14 +13,14 @@ public class Zahlart extends BasePersistable{
 	 * @param args
 	 */
 	@NotNull
-	private String zID;
+	private float zID;
 	
 	@NotNull
 	@Column(name = "beschreibung", nullable = false, length = 255)
 	private String beschreibung; // bar, ...
 	
 
-	public Zahlart(String zID,String beschreibung) {
+	public Zahlart(float zID,String beschreibung) {
 		// TODO Auto-generated method stub
 		this.zID=zID;
 		this.beschreibung=beschreibung;

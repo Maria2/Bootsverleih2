@@ -16,7 +16,7 @@ public class BootTyp extends BasePersistable {
 
 	@NotNull
 	@OneToMany (targetEntity = Boot.class)
-	public static String btId;
+	public static float btId;
 	
 	@Column(name = "name", nullable = false, length = 255)
 	private String benennung; //name des typs => beschreibung
@@ -31,7 +31,7 @@ public class BootTyp extends BasePersistable {
 	
 	private int maxPerson; //pro Boot
 	
-	public BootTyp(String btId, String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
+	public BootTyp(float btId, String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
 		// TODO Auto-generated method stub
 		
 		
@@ -45,7 +45,7 @@ public class BootTyp extends BasePersistable {
 				
 	}
 	
-	public String getID()
+	public float getID()
 	{
 		return btId;
 	}

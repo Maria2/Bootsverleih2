@@ -14,7 +14,7 @@ import org.junit.runners.Parameterized;
 @RunWith(value = Parameterized.class)
 public class BootTypTest {
 
-	public static String btId;
+	public static float btId;
 	
 	private String benennung; 
 	
@@ -28,7 +28,7 @@ public class BootTypTest {
 	
 	private int maxPerson; 
 	
-	public BootTypTest(String btId, String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
+	public BootTypTest(float btId, String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
 		// TODO Auto-generated method stub
 		
 		

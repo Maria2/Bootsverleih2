@@ -12,7 +12,7 @@ public class Mietet extends BasePersistable{
 	 * @param args
 	 */
 	@NotNull
-	private String mId;
+	private float mId;
 	
 	private String verleihStart;
 	
@@ -20,7 +20,7 @@ public class Mietet extends BasePersistable{
 	
 	private int discount;
 	
-	public Mietet(String mId, String verleihStart, int dauer, int discount) {
+	public Mietet(float mId, String verleihStart, int dauer, int discount) {
 		// TODO Auto-generated method stub
 		
 		this.mId=mId;

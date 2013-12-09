@@ -17,7 +17,7 @@ public class Boot extends BasePersistable{
 	
 	@NotNull
 	@ManyToOne (targetEntity = BootTyp.class)
-	public static String bootId;
+	public static float bootId;
 	
 	@NotNull
 	@Column(name = "name", nullable = false, length = 255)
@@ -25,12 +25,12 @@ public class Boot extends BasePersistable{
 	
 	@NotNull
 	@Column(name = "bootType", nullable = false, length = 255)
-	private String bootType; 
+	private float bootType; 
 	
 	
 	private int kostenProTag;
 
-	public Boot(String bootId,String name,String bootType, int kostenProTag) {
+	public Boot(float bootId,String name,float bootType, int kostenProTag) {
 		// TODO Auto-generated method stub
 				this.bootId=bootId;
 		this.name=name;

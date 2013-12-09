@@ -11,12 +11,12 @@ import org.junit.runners.Parameterized;
 @RunWith(value = Parameterized.class)
 public class ZahlartTest {
 
-	private String zID;
+	private float zID;
 	
 	private String beschreibung; 
 	
 
-	public ZahlartTest(String zID,String beschreibung) {
+	public ZahlartTest(float zID,String beschreibung) {
 		// TODO Auto-generated method stub
 		this.zID=zID;
 		this.beschreibung=beschreibung;

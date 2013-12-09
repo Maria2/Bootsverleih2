@@ -13,16 +13,16 @@ import org.junit.runners.Parameterized;
 @RunWith(value = Parameterized.class)
 public class BootTest{
 	
-	public static String bootId;
+	public static float bootId;
 
 	private String name;
 	
-	private String bootType; 
+	private float bootType; 
 	
 	
 	private int kostenProTag;
 
-	public BootTest(String bootId,String name,String bootType, int kostenProTag) {
+	public BootTest(float bootId,String name,float bootType, int kostenProTag) {
 		// TODO Auto-generated method stub
 		this.bootId=bootId;
 		this.name=name;
