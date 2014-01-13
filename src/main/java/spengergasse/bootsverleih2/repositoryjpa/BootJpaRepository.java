@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 public class BootJpaRepository extends AbstractJpaRepository<Boot> {
 
     public List<Boot> findAll() {
-        return entityManager().createQuery("SELECT cr FROM ClassRoom cr", Boot.class).getResultList();
+        return entityManager().createQuery("SELECT cr FROM Boot cr", Boot.class).getResultList();
     }
 
     public Boot findById(Long id) {

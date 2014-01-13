@@ -8,7 +8,7 @@ import spengergasse.bootsverleih2.domain.Mietet;
 public class MietetJpaRepository extends AbstractJpaRepository<Mietet> {
 
     public List<Mietet> findAll() {
-        return entityManager().createQuery("SELECT cr FROM ClassRoom cr", Mietet.class).getResultList();
+        return entityManager().createQuery("SELECT cr FROM Mietet cr", Mietet.class).getResultList();
     }
 
     public Mietet findById(Long id) {

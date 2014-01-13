@@ -1,0 +1,59 @@
+/*
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2013 Joachim Grüneis
+ * mailto:grueneis@spengergasse.at
+ */
+package spengergasse.bootsverleih2.repositoryjpa;
+
+import java.util.Date;
+
+import org.junit.Test;
+
+import spengergasse.bootsverleih2.domain.BootTyp;
+import spengergasse.bootsverleih2.repositoryjpa.BootTypJpaRepository;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.CoreMatchers.nullValue;
+
+public class BootTypJpaRepositoryTest extends AbstractJpaRepositoryTest {
+	@Test
+	public void findAllWithoutTeachers() {
+        BootTypJpaRepository bootTypJpaRepository = new BootTypJpaRepository();
+        bootTypJpaRepository.setEntityManager(entityManager);
+
+		// expect
+		assertThat(bootTypJpaRepository.findAll().isEmpty(),
+				is(equalTo(Boolean.TRUE)));
+	}
+
+	@Test
+	public void findByIdWithoutTeachers() {
+		BootTypJpaRepository bootTypJpaRepository = new BootTypJpaRepository();
+		bootTypJpaRepository.setEntityManager(entityManager);
+
+		// expect
+		assertThat(bootTypJpaRepository.findById(0l), is(nullValue()));
+	}
+
+	@Test
+	public void persistAndFindTeacher() {
+		BootTypJpaRepository bootTypJpaRepository = new BootTypJpaRepository();
+		bootTypJpaRepository.setEntityManager(entityManager);
+
+		BootTyp bootTyp = new BootTyp(123,"Segeler",400,true,20,30,30);
+
+		bootTypJpaRepository.persist(bootTyp);
+		assertThat(bootTyp.getId(), is(notNullValue()));
+		Long newId = bootTyp.getId();
+
+		logger.info("Created BootTyp with id: {} - bootTyp: {}", newId, bootTyp);
+
+		BootTyp bootTypByFind = bootTypJpaRepository.findById(newId);
+		assertThat(bootTypByFind, equalTo(bootTyp));
+	}
+}

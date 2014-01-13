@@ -8,7 +8,7 @@ import spengergasse.bootsverleih2.domain.Kunde;
 public class KundeJpaRepository extends AbstractJpaRepository<Kunde> {
 
     public List<Kunde> findAll() {
-        return entityManager().createQuery("SELECT cr FROM ClassRoom cr", Kunde.class).getResultList();
+        return entityManager().createQuery("SELECT cr FROM Kunde cr", Kunde.class).getResultList();
     }
 
     public Kunde findById(Long id) {

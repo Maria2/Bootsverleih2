@@ -11,7 +11,7 @@ import spengergasse.bootsverleih2.domain.BootTyp;
 public class BootTypJpaRepository extends AbstractJpaRepository<BootTyp> {
 
     public List<BootTyp> findAll() {
-        return entityManager().createQuery("SELECT cr FROM ClassRoom cr", BootTyp.class).getResultList();
+        return entityManager().createQuery("SELECT cr FROM BootTyp cr", BootTyp.class).getResultList();
     }
 
     public BootTyp findById(Long id) {
