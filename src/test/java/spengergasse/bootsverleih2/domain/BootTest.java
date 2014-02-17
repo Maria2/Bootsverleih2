@@ -13,7 +13,7 @@ import org.junit.runners.Parameterized;
 @RunWith(value = Parameterized.class)
 public class BootTest{
 	
-	public static float bootId;
+	private Long bootId;
 
 	private String name;
 	
@@ -22,7 +22,7 @@ public class BootTest{
 	
 	private int kostenProTag;
 
-	public BootTest(float bootId,String name,float bootType, int kostenProTag) {
+	public BootTest(Long bootId,String name,float bootType, int kostenProTag) {
 		// TODO Auto-generated method stub
 		this.bootId=bootId;
 		this.name=name;
@@ -33,19 +33,16 @@ public class BootTest{
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{ //
-                {null, null, null, null}, //
-                {null, "DreamCruiser", "", null}, //
-                {null, "DreamCruiser", "Barque", null}, //
-                {null, null, "Barque", 30},
-                {null, null, "Battleship", 100}};
+                {null, null, 0, 0}, //
+                {132554l, "DreamCruiser", 2341, 0}, //
+                {132555l, "DreamCruiser", 0, 123}, //
+                {132556l, null, 12342, 30},
+                {0l, "DreamCruiser2", 13241, 100}};
         return Arrays.asList(data);
     }
 	
     @Test(expected = IllegalArgumentException.class)
     public void whenCreatingWithNullArguments() {
-        new BootTest(bootId, name, bootType, kostenProTag);
-    }
-	
-	
-	
+        new Boot(bootId, name, bootType, kostenProTag);
+    }	
 }

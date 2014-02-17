@@ -11,4 +11,5 @@ import spengergasse.bootsverleih2.domain.Boot;
 public interface BootRepository extends CrudRepository<BootRepository, Long> {
 
 	    List<Boot> findByName(String name);
+	    List<Boot> findByKosten(int kosten);
 }

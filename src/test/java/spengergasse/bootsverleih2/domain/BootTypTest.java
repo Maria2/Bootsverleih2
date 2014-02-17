@@ -45,18 +45,20 @@ public class BootTypTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{ //
-                {null, null, null, null, null, null, null}, //
-                {"12354685", "Morgan", 34, true, 450, 50, null}, //
-                {"12354685", "Morgan", null, true, 450, 50, 500}, //
-                {"12354685", "Morgan", null, true, 450, 50, 500},
-                {"12354685", "Morgan", null, false, 450, 50, 600},
-                {"12354685", "Morgan", null, false, 200, null, 500}};
+                {0, null, 0, false, 0, 0, 0}, //
+                {0, "Morgan", 34, true, 450, 50, 1234}, //
+                {12354686, null, 34, true, 450, 50, 1234}, //
+                {12354684, "Sonne", 0, true, 450, 50, 1234}, //
+                {12354685, "Samsun", 22, false, 450, 50, 1234},//
+                {12354685, "Samsun", 22, true, 0, 50, 1234},//
+                {12354685, "Samsun", 22, true, 450, 0, 1234},//
+                {12354685, "Samsun", 22, true, 450, 50, 0}};
         return Arrays.asList(data);
     }
 	
     @Test(expected = IllegalArgumentException.class)
     public void whenCreatingWithNullArguments() {
-        new BootTypTest(btId, benennung, gewicht, schein, laenge, breite, maxPerson);
+        new BootTyp(btId, benennung, gewicht, schein, laenge, breite, maxPerson);
     }
 	
 	

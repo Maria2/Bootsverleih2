@@ -32,12 +32,11 @@ public class KundeTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{ //
-                {null, null, null, null, null}, //
-                {"456789", "Maria", "Hasler", "Wien", "1060"}, //
-                {"456789", "Maria", "Hasler", "Wien", "1060"}, //
-                {"456789", "Maria", "Hasler", "Wien", "1060"},
-                {"456789", "Maria", "Hasler", "Wien", "1060"},
-                {"456789", "Maria", "Hasler", "Wien", "1060"}};
+                {456780, null, null, null, null}, //
+                {456781, null, "Hasler", "Wien", "1060"}, //
+                {456782, "Maria", null, "Wien", "1060"}, //
+                {456783, "Maria", "Hasler", null, "1060"},
+                {0, "Maria", "Hasler", "Wien", null}};
         return Arrays.asList(data);
     }
 	

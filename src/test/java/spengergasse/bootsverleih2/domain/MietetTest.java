@@ -31,12 +31,11 @@ public class MietetTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{ //
-                {null, null, null, null}, //
-                {"456789", "2013-12-11", null, 20}, //
-                {"456789", "2013-12-11", 30, null}, //
-                {"456789", "2013-12-11", 30, 20},
-                {"456789", null, 30, 20},
-                {null, "2013-12-11", 30, 20}};
+                {456789, "2013-12-11", 0, 20}, //
+                {456789, "2013-12-11", 30, 0}, //
+                {456789, "2013-12-11", 30, 20},
+                {456789, null, 30, 20},
+                {0, "2013-12-11", 30, 20}};
         return Arrays.asList(data);
     }
 	

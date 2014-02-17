@@ -26,10 +26,8 @@ public class ZahlartTest {
 	 @Parameterized.Parameters
 	    public static Collection<Object[]> data() {
 	        Object[][] data = new Object[][]{ //
-	                {null, null}, //
-	                {"87954", "bar"}, //
-	                {"56123",null},
-	                {null,"bar"}};
+	                {87954, null}, //
+	                {0, "bar"}};
 	        return Arrays.asList(data);
 	    }
 		

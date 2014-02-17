@@ -22,7 +22,7 @@ import static org.hamcrest.CoreMatchers.nullValue;
 
 public class BootTypJpaRepositoryTest extends AbstractJpaRepositoryTest {
 	@Test
-	public void findAllWithoutTeachers() {
+	public void findAll() {
         BootTypJpaRepository bootTypJpaRepository = new BootTypJpaRepository();
         bootTypJpaRepository.setEntityManager(entityManager);
 
@@ -32,7 +32,7 @@ public class BootTypJpaRepositoryTest extends AbstractJpaRepositoryTest {
 	}
 
 	@Test
-	public void findByIdWithoutTeachers() {
+	public void findById() {
 		BootTypJpaRepository bootTypJpaRepository = new BootTypJpaRepository();
 		bootTypJpaRepository.setEntityManager(entityManager);
 
@@ -41,7 +41,7 @@ public class BootTypJpaRepositoryTest extends AbstractJpaRepositoryTest {
 	}
 
 	@Test
-	public void persistAndFindTeacher() {
+	public void persistAndFindBoot() {
 		BootTypJpaRepository bootTypJpaRepository = new BootTypJpaRepository();
 		bootTypJpaRepository.setEntityManager(entityManager);
 

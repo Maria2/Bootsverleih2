@@ -5,6 +5,9 @@ package spengergasse.bootsverleih2.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -15,6 +18,8 @@ import javax.validation.constraints.NotNull;
 public class BootTyp extends BasePersistable {
 
 	@NotNull
+	@Id
+	@GeneratedValue
 	@OneToMany (targetEntity = Boot.class)
 	public static float btId;
 	
@@ -33,7 +38,7 @@ public class BootTyp extends BasePersistable {
 	
 	public BootTyp(float btId, String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
 		// TODO Auto-generated method stub
-		
+		if (benennung == null) throw new IllegalArgumentException("Benennung must not be null");
 		
 		this.btId= btId;
 		this.benennung=benennung;

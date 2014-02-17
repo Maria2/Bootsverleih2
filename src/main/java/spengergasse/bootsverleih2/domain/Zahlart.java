@@ -2,6 +2,8 @@ package spengergasse.bootsverleih2.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -13,6 +15,8 @@ public class Zahlart extends BasePersistable{
 	 * @param args
 	 */
 	@NotNull
+	@Id
+	@GeneratedValue
 	private float zID;
 	
 	@NotNull
