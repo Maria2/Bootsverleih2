@@ -17,7 +17,7 @@ public class Kunde extends BasePersistable{
 	@NotNull
 	@Id
 	@GeneratedValue
-	private float kId;
+	private Long kId; 
 	
 	@Column(name = "vorname", nullable = false, length = 255)
 	private String vorname;
@@ -28,14 +28,18 @@ public class Kunde extends BasePersistable{
 	private String wohnort;
 	private String plz;
 	
-	public Kunde(float kId, String vorname, String nachname, String wohnort, String plz) {
+	public Kunde(Long kId, String vorname, String nachname, String wohnort, String plz) {
 		// TODO Auto-generated method stub
-		
-		this.kId=kId;
-		this.vorname=vorname;
-		this.nachname=nachname;
-		this.wohnort=wohnort;
-		this.plz=plz;
+		if (kId == null) throw new IllegalArgumentException();
+			this.kId=kId;
+		if (vorname == null) throw new IllegalArgumentException();
+			this.vorname=vorname;
+		if (nachname == null) throw new IllegalArgumentException();
+			this.nachname=nachname;
+		if (wohnort == null) throw new IllegalArgumentException();
+			this.wohnort=wohnort;
+		if (plz == null) throw new IllegalArgumentException();
+			this.plz=plz;
 	}
 	
 	public String toString()

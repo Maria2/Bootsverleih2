@@ -16,7 +16,7 @@ public class Mietet extends BasePersistable{
 	@NotNull
 	@Id
 	@GeneratedValue
-	private float mId;
+	private Long mId;
 	
 	private String verleihStart;
 	
@@ -24,12 +24,14 @@ public class Mietet extends BasePersistable{
 	
 	private int discount;
 	
-	public Mietet(float mId, String verleihStart, int dauer, int discount) {
+	public Mietet(Long mId, String verleihStart, int dauer, int discount) {
 		// TODO Auto-generated method stub
-		
-		this.mId=mId;
-		this.verleihStart=verleihStart;
-		this.dauer=dauer;
+		if (mId == null) throw new IllegalArgumentException();
+			this.mId=mId;
+		if (verleihStart == null) throw new IllegalArgumentException();
+			this.verleihStart=verleihStart;
+		if (dauer == 0) throw new IllegalArgumentException();
+			this.dauer=dauer;
 		this.discount=discount;
 		
 	}

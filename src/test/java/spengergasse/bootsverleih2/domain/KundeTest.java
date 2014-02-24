@@ -10,7 +10,7 @@ import org.junit.runners.Parameterized;
 @RunWith(value = Parameterized.class)
 public class KundeTest {
 
-	private float kId;
+	private Long kId;
 	
 	private String vorname;
 	
@@ -19,7 +19,7 @@ public class KundeTest {
 	private String wohnort;
 	private String plz;
 	
-	public KundeTest(float kId, String vorname, String nachname, String wohnort, String plz) {
+	public KundeTest(Long kId, String vorname, String nachname, String wohnort, String plz) {
 		// TODO Auto-generated method stub
 		
 		this.kId=kId;
@@ -32,17 +32,18 @@ public class KundeTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{ //
-                {456780, null, null, null, null}, //
-                {456781, null, "Hasler", "Wien", "1060"}, //
-                {456782, "Maria", null, "Wien", "1060"}, //
-                {456783, "Maria", "Hasler", null, "1060"},
-                {0, "Maria", "Hasler", "Wien", null}};
+                {null, null, null, null, null}, //
+                {null, "Maria", "Hasler", "Wien", "1060"}, //
+                {456782l, null, "Hasler", "Wien", "1060"}, //
+                {456783l, "Maria", null, "Wien", "1060"},
+                {456783l, "Maria", "Hasler", null, "1060"},
+                {null, "Maria", "Hasler", "Wien", null}};
         return Arrays.asList(data);
     }
 	
     @Test(expected = IllegalArgumentException.class)
     public void whenCreatingWithNullArguments() {
-        new KundeTest(kId, vorname, nachname, wohnort, plz);
+        new Kunde(kId, vorname, nachname, wohnort, plz);
     }
 
 }

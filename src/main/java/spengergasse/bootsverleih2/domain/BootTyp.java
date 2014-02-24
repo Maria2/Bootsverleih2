@@ -21,7 +21,7 @@ public class BootTyp extends BasePersistable {
 	@Id
 	@GeneratedValue
 	@OneToMany (targetEntity = Boot.class)
-	public static float btId;
+	public static Long btId;
 	
 	@Column(name = "name", nullable = false, length = 255)
 	private String benennung; //name des typs => beschreibung
@@ -36,16 +36,20 @@ public class BootTyp extends BasePersistable {
 	
 	private int maxPerson; //pro Boot
 	
-	public BootTyp(float btId, String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
+	public BootTyp(Long btId, String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
 		// TODO Auto-generated method stub
-		if (benennung == null) throw new IllegalArgumentException("Benennung must not be null");
-		
+		if (btId == null) throw new IllegalArgumentException();
 		this.btId= btId;
+		if (benennung == null) throw new IllegalArgumentException();
 		this.benennung=benennung;
+		if (gewicht == 0) throw new IllegalArgumentException();
 		this.gewicht=gewicht;
 		this.schein=schein;
+		if (laenge == 0) throw new IllegalArgumentException();
 		this.laenge=l;
+		if (breite == 0) throw new IllegalArgumentException();
 		this.breite=b;
+		if (maxPerson == 0) throw new IllegalArgumentException();
 		this.maxPerson=maxPer;
 				
 	}

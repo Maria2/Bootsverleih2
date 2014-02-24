@@ -21,7 +21,7 @@ public class Boot extends BasePersistable{
 	@Id
 	@GeneratedValue
 	@ManyToOne (targetEntity = BootTyp.class)
-	public static float bootId;
+	public static Long bootId;
 	
 	@NotNull
 	@Column(name = "name", nullable = false, length = 255)
@@ -29,18 +29,21 @@ public class Boot extends BasePersistable{
 	
 	@NotNull
 	@Column(name = "bootType", nullable = false, length = 255)
-	private float bootType; 
+	private Long bootType; 
 	
 	
 	private int kostenProTag;
 
-	public Boot(Long bootId,String name,float bootType, int kostenProTag) {
+	public Boot(Long bootId,String name, int kostenProTag) {
 		if (bootId == null) throw new IllegalArgumentException();
 		// TODO Auto-generated method stub
 				this.bootId=bootId;
+		if (name == null) throw new IllegalArgumentException();
 		this.name=name;
-		this.bootType=BootTyp.btId;
+		if (kostenProTag == 0) throw new IllegalArgumentException();
 		this.kostenProTag=kostenProTag;
+		if(BootTyp.btId==null) throw new IllegalArgumentException();
+		this.bootType=BootTyp.btId;
 	}
 	
 	public String toString()

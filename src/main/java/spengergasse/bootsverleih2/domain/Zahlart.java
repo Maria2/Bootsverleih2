@@ -17,16 +17,18 @@ public class Zahlart extends BasePersistable{
 	@NotNull
 	@Id
 	@GeneratedValue
-	private float zID;
+	private Long zID;
 	
 	@NotNull
 	@Column(name = "beschreibung", nullable = false, length = 255)
 	private String beschreibung; // bar, ...
 	
 
-	public Zahlart(float zID,String beschreibung) {
+	public Zahlart(Long zID,String beschreibung) {
 		// TODO Auto-generated method stub
-		this.zID=zID;
+		if (zID == null) throw new IllegalArgumentException();
+			this.zID=zID;
+		if (beschreibung == null) throw new IllegalArgumentException();
 		this.beschreibung=beschreibung;
 		
 	}
