@@ -28,7 +28,7 @@ public class BootRepositoryTest extends AbstractJpaRepositoryTest {
     	BootJpaRepository bootRepository = new BootJpaRepository();
     	bootRepository.setEntityManager(entityManager);
 
-        Boot boot = new Boot(4321L,"Aerius",3,340);
+        Boot boot = new Boot(4321L,"Aerius",340);
         bootRepository.persist(boot);
 
         Boot boot2 = bootRepository.findById(boot.getId());
