@@ -16,13 +16,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "Boot")
 public class Boot extends BasePersistable{
-	
-	@NotNull
-	@Id
-	@GeneratedValue
-	@ManyToOne (targetEntity = BootTyp.class)
-	public static Long bootId;
-	
+		
 	@NotNull
 	@Column(name = "name", nullable = false, length = 255)
 	private String name;
@@ -37,19 +31,17 @@ public class Boot extends BasePersistable{
 	public Boot(Long bootId,String name, int kostenProTag) {
 		if (bootId == null) throw new IllegalArgumentException();
 		// TODO Auto-generated method stub
-				this.bootId=bootId;
+				this.setId(bootId);
 		if (name == null) throw new IllegalArgumentException();
 		this.name=name;
 		if (kostenProTag == 0) throw new IllegalArgumentException();
 		this.kostenProTag=kostenProTag;
-		if(BootTyp.btId==null) throw new IllegalArgumentException();
-		this.bootType=BootTyp.btId;
 	}
 	
 	public String toString()
 	{
 		
-		return bootId+" "+name+" "+bootType+" "+kostenProTag+" ";
+		return getId()+" "+name+" "+bootType+" "+kostenProTag+" ";
 	}
 	
 }

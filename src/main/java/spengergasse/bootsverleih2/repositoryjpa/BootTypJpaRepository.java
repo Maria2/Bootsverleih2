@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import spengergasse.bootsverleih2.domain.Boot;
 import spengergasse.bootsverleih2.domain.BootTyp;
 
 @Repository

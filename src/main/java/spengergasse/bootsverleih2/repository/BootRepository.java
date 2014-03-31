@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import spengergasse.bootsverleih2.domain.Boot;
 
 @Repository
-public interface BootRepository extends CrudRepository<BootRepository, Long> {
+public interface BootRepository extends CrudRepository<Boot, Long> {
 
 	    List<Boot> findByName(String name);
-	    List<Boot> findByKosten(int kosten);
+	    List<Boot> findByKostenProTag(int kostenProTag);
 }

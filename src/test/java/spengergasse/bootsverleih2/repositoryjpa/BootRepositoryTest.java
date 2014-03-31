@@ -10,7 +10,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import spengergasse.bootsverleih2.domain.Boot;
-import spengergasse.bootsverleih2.repositoryjpa.BootJpaRepository;
 
 public class BootRepositoryTest extends AbstractJpaRepositoryTest {
     @Test

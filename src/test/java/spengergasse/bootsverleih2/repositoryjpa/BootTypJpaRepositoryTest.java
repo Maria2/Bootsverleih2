@@ -6,19 +6,15 @@
  */
 package spengergasse.bootsverleih2.repositoryjpa;
 
-import java.util.Date;
-
-import org.junit.Test;
-
-import spengergasse.bootsverleih2.domain.BootTyp;
-import spengergasse.bootsverleih2.repositoryjpa.BootTypJpaRepository;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.Test;
+
+import spengergasse.bootsverleih2.domain.BootTyp;
 
 public class BootTypJpaRepositoryTest extends AbstractJpaRepositoryTest {
 	@Test
@@ -44,7 +40,6 @@ public class BootTypJpaRepositoryTest extends AbstractJpaRepositoryTest {
 	public void persistAndFindBoot() {
 		BootTypJpaRepository bootTypJpaRepository = new BootTypJpaRepository();
 		bootTypJpaRepository.setEntityManager(entityManager);
-
 		BootTyp bootTyp = new BootTyp(123l,"Segeler",400,true,20,30,30);
 
 		bootTypJpaRepository.persist(bootTyp);

@@ -46,13 +46,13 @@ public class BootTypTest {
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{ //
                 {null, null, 0, false, 0, 0, 0}, //
-                {12354686l, "Morgan", 34, true, 450, 50, 1234}, //
+                {12354686l, "Morgan", 34, true, 450, 50, 0}, //
                 {12354686l, null, 34, true, 450, 50, 1234}, //
                 {12354684l, "Sonne", 0, true, 450, 50, 1234}, //
-                {12354685l, "Samsun", 22, false, 450, 50, 1234},//
-                {12354685l, "Samsun", 22, true, 0, 50, 1234},//
-                {12354685l, "Samsun", 22, true, 450, 0, 1234},//
-                {12354685l, "Samsun", 22, true, 450, 50, 0}};
+                {null, "Samsun1", 22, false, 450, 50, 1234},//
+                {12354685l, "Samsun2", 22, true, 0, 50, 1234},//
+                {12354685l, "Samsun3", 22, true, 450, 0, 1234},//
+                {12354685l, "Samsun4", 22, true, 450, 50, 0}};
         return Arrays.asList(data);
     }
 	

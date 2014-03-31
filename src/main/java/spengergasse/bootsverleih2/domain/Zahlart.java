@@ -10,14 +10,6 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "Zahlart")
 public class Zahlart extends BasePersistable{
-
-	/**
-	 * @param args
-	 */
-	@NotNull
-	@Id
-	@GeneratedValue
-	private Long zID;
 	
 	@NotNull
 	@Column(name = "beschreibung", nullable = false, length = 255)
@@ -27,7 +19,8 @@ public class Zahlart extends BasePersistable{
 	public Zahlart(Long zID,String beschreibung) {
 		// TODO Auto-generated method stub
 		if (zID == null) throw new IllegalArgumentException();
-			this.zID=zID;
+		// TODO Auto-generated method stub
+				this.setId(zID);
 		if (beschreibung == null) throw new IllegalArgumentException();
 		this.beschreibung=beschreibung;
 		
@@ -36,7 +29,7 @@ public class Zahlart extends BasePersistable{
 	public String toString()
 	{
 		
-		return zID+" "+beschreibung+" ";
+		return getId()+" "+beschreibung+" ";
 	}
 	
 

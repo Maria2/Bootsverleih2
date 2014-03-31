@@ -9,14 +9,6 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "Mietet")
 public class Mietet extends BasePersistable{
-
-	/**
-	 * @param args
-	 */
-	@NotNull
-	@Id
-	@GeneratedValue
-	private Long mId;
 	
 	private String verleihStart;
 	
@@ -27,7 +19,8 @@ public class Mietet extends BasePersistable{
 	public Mietet(Long mId, String verleihStart, int dauer, int discount) {
 		// TODO Auto-generated method stub
 		if (mId == null) throw new IllegalArgumentException();
-			this.mId=mId;
+		// TODO Auto-generated method stub
+				this.setId(mId);
 		if (verleihStart == null) throw new IllegalArgumentException();
 			this.verleihStart=verleihStart;
 		if (dauer == 0) throw new IllegalArgumentException();
@@ -39,7 +32,7 @@ public class Mietet extends BasePersistable{
 	public String toString()
 	{
 		
-		return mId+" "+verleihStart+" "+dauer+" "+discount+" ";
+		return getId()+" "+verleihStart+" "+dauer+" "+discount+" ";
 	}
 
 }

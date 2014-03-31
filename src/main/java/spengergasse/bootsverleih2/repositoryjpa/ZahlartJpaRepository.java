@@ -3,6 +3,7 @@ package spengergasse.bootsverleih2.repositoryjpa;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+
 import spengergasse.bootsverleih2.domain.Zahlart;
 
 @Repository

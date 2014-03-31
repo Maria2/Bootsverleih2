@@ -5,8 +5,10 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface MietetRepository extends CrudRepository<MietetRepository, Long> {
+import spengergasse.bootsverleih2.domain.Mietet;
 
-    List<MietetRepository> findByVerleihStart(String verleihStart);
+@Repository
+public interface MietetRepository extends CrudRepository<Mietet, Long> {
+
+    List<Mietet> findByVerleihStart(String verleihStart);
 }
