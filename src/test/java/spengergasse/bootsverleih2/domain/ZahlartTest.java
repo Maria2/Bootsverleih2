@@ -11,14 +11,14 @@ import org.junit.runners.Parameterized;
 @RunWith(value = Parameterized.class)
 public class ZahlartTest {
 
-	private Long zID;
+	private String art;
 	
 	private String beschreibung; 
 	
 
-	public ZahlartTest(Long zID,String beschreibung) {
+	public ZahlartTest(String art,String beschreibung) {
 		// TODO Auto-generated method stub
-		this.zID=zID;
+		this.art=art;
 		this.beschreibung=beschreibung;
 		
 	}
@@ -26,14 +26,14 @@ public class ZahlartTest {
 	 @Parameterized.Parameters
 	    public static Collection<Object[]> data() {
 	        Object[][] data = new Object[][]{ //
-	                {87954l, null}, //
-	                {null, "bar"}};
+	                {"bar", null}, //
+	                {null, "mit Zahlscheinbestätigung"}};
 	        return Arrays.asList(data);
 	    }
 		
 	    @Test(expected = IllegalArgumentException.class)
 	    public void whenCreatingWithNullArguments() {
-	        new Zahlart(zID, beschreibung);
+	        new Zahlart(art, beschreibung);
 	    }
 		
 	

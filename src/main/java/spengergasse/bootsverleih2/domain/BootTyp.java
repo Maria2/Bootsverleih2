@@ -29,11 +29,8 @@ public class BootTyp extends BasePersistable {
 	
 	private int maxPerson; //pro Boot
 	
-	public BootTyp(Long btId, String benennung, int gewicht, boolean schein, int laenge, int breite, int maxPer) {
+	public BootTyp(String benennung, int gewicht, boolean schein, int laenge, int breite, int maxPer) {
 		// TODO Auto-generated method stub
-		if (btId == null) throw new IllegalArgumentException();
-		// TODO Auto-generated method stub
-				this.setId(btId);
 		if (benennung == null) throw new IllegalArgumentException();
 		this.benennung=benennung;
 		if (gewicht == 0) throw new IllegalArgumentException();

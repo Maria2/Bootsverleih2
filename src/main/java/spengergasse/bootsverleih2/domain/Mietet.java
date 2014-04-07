@@ -16,11 +16,8 @@ public class Mietet extends BasePersistable{
 	
 	private int discount;
 	
-	public Mietet(Long mId, String verleihStart, int dauer, int discount) {
+	public Mietet(String verleihStart, int dauer, int discount) {
 		// TODO Auto-generated method stub
-		if (mId == null) throw new IllegalArgumentException();
-		// TODO Auto-generated method stub
-				this.setId(mId);
 		if (verleihStart == null) throw new IllegalArgumentException();
 			this.verleihStart=verleihStart;
 		if (dauer == 0) throw new IllegalArgumentException();

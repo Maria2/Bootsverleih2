@@ -13,8 +13,6 @@ import org.junit.runners.Parameterized;
 
 @RunWith(value = Parameterized.class)
 public class BootTypTest {
-
-	public static Long btId;
 	
 	private String benennung; 
 	
@@ -28,11 +26,8 @@ public class BootTypTest {
 	
 	private int maxPerson; 
 	
-	public BootTypTest(Long btId, String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
+	public BootTypTest(String benennung, int gewicht, boolean schein, int l, int b, int maxPer) {
 		// TODO Auto-generated method stub
-		
-		
-		this.btId= btId;
 		this.benennung=benennung;
 		this.gewicht=gewicht;
 		this.schein=schein;
@@ -45,20 +40,20 @@ public class BootTypTest {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{ //
-                {null, null, 0, false, 0, 0, 0}, //
-                {12354686l, "Morgan", 34, true, 450, 50, 0}, //
-                {12354686l, null, 34, true, 450, 50, 1234}, //
-                {12354684l, "Sonne", 0, true, 450, 50, 1234}, //
-                {null, "Samsun1", 22, false, 450, 50, 1234},//
-                {12354685l, "Samsun2", 22, true, 0, 50, 1234},//
-                {12354685l, "Samsun3", 22, true, 450, 0, 1234},//
-                {12354685l, "Samsun4", 22, true, 450, 50, 0}};
+                {null, 0, false, 0, 0, 0}, //
+                {"Morgan", 34, true, 450, 50, 0}, //
+                { null, 34, true, 450, 50, 1234}, //
+                { "Sonne", 0, true, 450, 50, 1234}, //
+                //{ "Samsun1", 22, false, 450, 50, 1234},//
+                {"Samsun2", 22, true, 0, 50, 1234},//
+                { "Samsun3", 22, true, 450, 0, 1234},//
+                { "Samsun4", 22, true, 450, 50, 0}};
         return Arrays.asList(data);
     }
 	
     @Test(expected = IllegalArgumentException.class)
     public void whenCreatingWithNullArguments() {
-        new BootTyp(btId, benennung, gewicht, schein, laenge, breite, maxPerson);
+        new BootTyp(benennung, gewicht, schein, laenge, breite, maxPerson);
     }
 	
 	

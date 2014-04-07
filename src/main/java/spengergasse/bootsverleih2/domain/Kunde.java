@@ -20,11 +20,8 @@ public class Kunde extends BasePersistable{
 	private String wohnort;
 	private String plz;
 	
-	public Kunde(Long kId, String vorname, String nachname, String wohnort, String plz) {
+	public Kunde(String vorname, String nachname, String wohnort, String plz) {
 		// TODO Auto-generated method stub
-		if (kId == null) throw new IllegalArgumentException();
-		// TODO Auto-generated method stub
-				this.setId(kId);
 		if (vorname == null) throw new IllegalArgumentException();
 			this.vorname=vorname;
 		if (nachname == null) throw new IllegalArgumentException();

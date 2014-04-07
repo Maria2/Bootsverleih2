@@ -40,7 +40,7 @@ public class BootTypJpaRepositoryTest extends AbstractJpaRepositoryTest {
 	public void persistAndFindBoot() {
 		BootTypJpaRepository bootTypJpaRepository = new BootTypJpaRepository();
 		bootTypJpaRepository.setEntityManager(entityManager);
-		BootTyp bootTyp = new BootTyp(123l,"Segeler",400,true,20,30,30);
+		BootTyp bootTyp = new BootTyp("Segeler",400,true,20,30,30);
 
 		bootTypJpaRepository.persist(bootTyp);
 		assertThat(bootTyp.getId(), is(notNullValue()));

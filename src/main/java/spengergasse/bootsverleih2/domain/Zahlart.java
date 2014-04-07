@@ -12,24 +12,25 @@ import javax.validation.constraints.NotNull;
 public class Zahlart extends BasePersistable{
 	
 	@NotNull
+	@Column(name = "art", nullable = false, length = 255)
+	private String art; // bar, ...
+	
 	@Column(name = "beschreibung", nullable = false, length = 255)
-	private String beschreibung; // bar, ...
+	private String beschreibung; 
 	
 
-	public Zahlart(Long zID,String beschreibung) {
+	public Zahlart(String art, String beschreibung) {
 		// TODO Auto-generated method stub
-		if (zID == null) throw new IllegalArgumentException();
-		// TODO Auto-generated method stub
-				this.setId(zID);
 		if (beschreibung == null) throw new IllegalArgumentException();
 		this.beschreibung=beschreibung;
-		
+		if (art == null) throw new IllegalArgumentException();
+		this.art=art;
 	}
 	
 	public String toString()
 	{
 		
-		return getId()+" "+beschreibung+" ";
+		return getId()+" "+beschreibung+" "+art;
 	}
 	
 
